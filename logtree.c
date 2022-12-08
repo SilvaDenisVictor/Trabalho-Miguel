@@ -8,27 +8,18 @@
 #include <stdlib.h>
 #include "logtree.h"
 
-void f_inicializar (Fila_FIFO **f);{
+void log_inicializar(Log **l);{
 
 }
-int f_inserir (Fila_FIFO **f, int chave, int valor);{
+void log_registrar(Log **l, int conta, int classe, int timer, int caixa);{
 
 }
-int f_obter_proxima_chave (Fila_FIFO **f);{
+float log_media_por_classe(Log **l, int classe);{
 
 }
-int f_consultar_proxima_chave (Fila_FIFO **f);{
+int log_obter_soma_por_classe(Log **l, int classe);{
 
 }
-int f_consultar_proximo_valor (Fila_FIFO **f);{
-
-}
-int f_num_elementos (Fila_FIFO **f);{
-
-}
-int f_consultar_chave_por_posicao (Fila_FIFO **f, int posicao);{
-
-}
-int f_consultar_valor_por_posicao (Fila_FIFO **f, int posicao);{
+int log_obter_contagem_por_classe(Log **l, int classe);{
 
 }
