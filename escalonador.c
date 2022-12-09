@@ -1,8 +1,8 @@
 //Trabalho final
 //Grupo:
 //Jose Gerardo Araujo Rocha
-//
-//
+//Denis da Silva Victor
+
 
 #include <stdio.h>
 #include <stdlib.h>
