@@ -1,8 +1,8 @@
 //Trabalho final
 //Grupo:
 //Jose Gerardo Araujo Rocha
-//
-//
+//Denis da Silva Victor
+
 
 #ifndef escalonador_h
 #define escalonador_h
