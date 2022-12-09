@@ -1,8 +1,8 @@
 //Trabalho final
 //Grupo:
 //Jose Gerardo Araujo Rocha
-//
-//
+//Denis da Silva Victor
+
 
 #ifndef logtree_h
 #define logtree_h
