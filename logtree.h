@@ -11,10 +11,10 @@
 #include <stdlib.h>
 
 typedef enum class {
-  liso = 5,
-  copper = 4,
-  silver = 3,
-  gold = 2,
+  Leezu = 5,
+  Bronze = 4,
+  Prata = 3,
+  Ouro = 2,
   Premium = 1,
   nulo = 0
 } Class;
