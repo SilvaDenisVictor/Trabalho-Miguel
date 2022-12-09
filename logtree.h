@@ -10,14 +10,56 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void f_inicializar (Fila_FIFO **);
-int f_inserir (Fila_FIFO **, int , int );
-int f_obter_proxima_chave (Fila_FIFO **);
-int f_consultar_proxima_chave (Fila_FIFO **);
-int f_consultar_proximo_valor (Fila_FIFO **);
-int f_num_elementos (Fila_FIFO **);
-int f_consultar_chave_por_posicao (Fila_FIFO **, int );
-int f_consultar_valor_por_posicao (Fila_FIFO **, int);
+typedef enum class {
+  liso = 5,
+  copper = 4,
+  silver = 3,
+  gold = 2,
+  Premium = 1,
+  nulo = 0
+} Class;
+
+typedef struct _client {
+    int cnt;
+    Class class; 
+    int op;
+} Client;
+
+typedef enum { black, red } Color;
+
+typedef struct _lg {
+  Class class;
+  Color color;
+  int key, cashier, cnt, op;
+  struct _lg *pai,*esq, *dir;
+} Lg;
+
+typedef struct _rodar{
+  int op, clients, ttotal;
+}Rodar;
+
+typedef struct arv {
+  Lg *root;
+  Lg *nul;
+} ARV;
+
+ARV *initialize();
+
+void register(ARV *, int , int , int , int , int );
+
+int sum_by_class(ARV *, Lg *, Class );
+
+int count_by_class(ARV *, Lg *, Class );
+
+float av_by_class(ARV *, Lg *, Class );
+
+void inorder(ARV *, Lg *);
+
+int alt_black(ARV *);
+
+Lg* maximum(ARV *);
+
+Rodar roll(ARV *, Class);
 
 #endif /* logtree_h */
 
