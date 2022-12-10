@@ -43,15 +43,23 @@ typedef struct arv {
   Lg *nul;
 } ARV;
 
-ARV *initialize();
+void rightrotate(ARV *A, Lg *w);
 
-void register(ARV *, int , int , int , int , int );
+void leftrotate(ARV *A, Lg *v);
 
-int sum_by_class(ARV *, Lg *, Class );
+Lg *createnode(Lg *, int cnt, int class, int tempo, int cashier,int op);
 
-int count_by_class(ARV *, Lg *, Class );
+void adjust(ARV *, Lg *);
 
-float av_by_class(ARV *, Lg *, Class );
+ARV *log_inicializar();
+
+void log_registrar(ARV *, int , int , int , int , int );
+
+int log_obter_soma_por_classe(ARV *, Lg *, Class );
+
+int log_obter_contagem_por_classe(ARV *, Lg *, Class );
+
+float log_media_por_classe(ARV *, Lg *, Class );
 
 void inorder(ARV *, Lg *);
 
