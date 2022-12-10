@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include "logtree.h"
 
-ARV *initialize(){
+ARV *log_inicializar(){
   ARV *A = malloc(sizeof(ARV));
   Lg *nul = malloc(sizeof(Lg));
 
@@ -116,7 +116,7 @@ void adjust(ARV *A, Lg *cl) {
 
   A->root->color = black;
 }
-void register(ARV *A, int cnt, int class, int tempo, int cashier,int op){ 
+void log_registrar(ARV *A, int cnt, int class, int tempo, int cashier,int op){ 
   Lg *n, *root = A->root, *pai = A->nul;
   int key = tempo;
 
@@ -142,40 +142,40 @@ void register(ARV *A, int cnt, int class, int tempo, int cashier,int op){
   
 }
 
-int sum_by_class(ARV *A, Lg *n, Class class ){
+int log_obter_soma_por_classe(ARV *A, Lg *n, Class class ){
    if (n == A->nul) {
     return 0;
   } else {
     if (n->class == class) {
-      return n->key + sum_by_class(A, n->esq, class) +
-             sum_by_class(A, n->dir, class);
+      return n->key + log_obter_soma_por_classe(A, n->esq, class) +
+             log_obter_soma_por_classe(A, n->dir, class);
     } else {
-      return 0 + sum_by_class(A, n->esq, class) +
-             sum_by_class(A, n->dir, class);
+      return 0 + log_obter_soma_por_classe(A, n->esq, class) +
+             log_obter_soma_por_classe(A, n->dir, class);
     }
   }
 }
 
-int count_by_class(ARV *A, Lg *n, Class class ){
+int log_obter_contagem_por_classe(ARV *A, Lg *n, Class class ){
    if (n == A->nul) {
     return 0;
   } else {
     if (n->class == class) {
-      return 1 + count_by_class(A, n->esq, class) +
-             count_by_class(A, n->dir, class);
+      return 1 + log_obter_contagem_por_classe(A, n->esq, class) +
+             log_obter_contagem_por_classe(A, n->dir, class);
     } else {
-      return 0 + count_by_class(A, n->esq, class) +
-             count_by_class(A, n->dir, class);
+      return 0 + log_obter_contagem_por_classe(A, n->esq, class) +
+             log_obter_contagem_por_classe(A, n->dir, class);
     }
   }
 }
 
-float av_by_class(ARV *A, Lg *n, Class class){
+float log_media_por_classe(ARV *A, Lg *n, Class class){
    int clients, ttotal;
   float av;
 
-  ttotal = sum_by_class(A, n, class);
-  clients = count_by_class(A, n, class);
+  ttotal = log_obter_soma_por_classe(A, n, class);
+  clients = log_obter_contagem_por_classe(A, n, class);
 
   if (clients == 0)
     return 0;
